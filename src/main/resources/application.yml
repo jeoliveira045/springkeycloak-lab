@@ -12,8 +12,9 @@ spring:
     oauth2:
       client:
         provider:
-          issuer-uri: http://localhost:8085/realms/SpringBootKeycloak
-          user-name-attribute: preferred_username
+          keycloak:
+            issuer-uri: http://localhost:8085/realms/springboot-lab
+            user-name-attribute: preferred_username
         registration:
           keycloak:
             client-id: springboot-lab
@@ -21,4 +22,4 @@ spring:
             scope: openid
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8085/realms/SpringBootKeycloak
+          issuer-uri: http://localhost:8085/realms/springboot-lab
