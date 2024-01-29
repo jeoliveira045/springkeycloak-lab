@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/ORCLPDB1
+    username: KEYCLOAKLAB
+    password: KEYCLOAKLAB
+    driver-class-name: oracle.jdbc.driver.OracleDriver # Driver JDBC do Oracle
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  security:
+    oauth2:
+      client:
+        provider:
+          issuer-uri: http://localhost:8085/realms/SpringBootKeycloak
+          user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: springboot-lab
+            authorization-grant-type: authorization_code
+            scope: openid
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8085/realms/SpringBootKeycloak
