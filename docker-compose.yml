@@ -6,7 +6,7 @@ services:
     ports:
       - 1521:1521
     volumes:
-      - ./src/main/resources/docker.oracle/:/docker-entrypoint-initdb.d/startup
+      - ./src/main/resources/docker/oracle/:/docker-entrypoint-initdb.d/startup
 
   keycloak-lab:
     image: quay.io/keycloak/keycloak:23.0.5
