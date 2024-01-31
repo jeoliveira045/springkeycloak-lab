@@ -3,14 +3,9 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
 import {initializer} from "./security/app-init";
-
-// const initializer = {
-//   provide: APP_INITIALIZER,
-//   useFactory: initializer,
-//   deps:[KeycloakService],
-//   multi: true
-// }
+import {SharedModule} from "./shared/shared.module";
+import '@angular/compiler'
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes)]
+  providers: [provideRouter(routes), importProvidersFrom(SharedModule)]
 };
