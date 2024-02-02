@@ -12,8 +12,7 @@ services:
     image: quay.io/keycloak/keycloak:23.0.5
     ports:
       - 8085:8085
-    command: ["start-dev","--http-port","8085"]
+    command: ["start-dev","--http-port","8085","--log-level=DEBUG"]
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
-

@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import {AccessDeniedComponent} from "./components/access-denied/access-denied.component";
 import {AuthGuard} from "./security/guard/authguard.guard";
-import {AdminComponent} from "./components/admin/admin.component";
-import {ManagerComponent} from "./components/manager/manager.component";
+import {AuthorComponent} from "./components/author/author.component";
+import {BookComponent} from "./components/books/book.component";
 
 export const routes: Routes = [
   {
@@ -11,14 +11,14 @@ export const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'admin',
-    component: AdminComponent,
+    path: 'author',
+    component: AuthorComponent,
     canActivate:[AuthGuard],
     data: {roles: ['ROLE_ADMIN']}
   },
   {
-    path: 'manager',
-    component: ManagerComponent,
+    path: 'book',
+    component: BookComponent,
     canActivate: [AuthGuard],
     data: {roles: ['ROLE_MANAGER']}
   }

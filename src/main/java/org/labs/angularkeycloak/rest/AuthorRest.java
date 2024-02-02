@@ -1,5 +1,6 @@
 package org.labs.angularkeycloak.rest;
 
+import lombok.AllArgsConstructor;
 import org.labs.angularkeycloak.entities.Author;
 import org.labs.angularkeycloak.repository.AuthorRepository;
 import org.springframework.http.ResponseEntity;
@@ -11,12 +12,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/author")
+@AllArgsConstructor
 public class AuthorRest {
 
     private AuthorRepository repository;
 
     @GetMapping
-    public String findAll(){
-        return "<h1>Todos os autores</h1>";
+    public List<Author> findAll(){
+        return repository.findAll();
     }
 }

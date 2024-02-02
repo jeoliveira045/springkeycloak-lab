@@ -3,22 +3,32 @@ import { CommonModule } from '@angular/common';
 import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
 import {initializer} from "../security/app-init";
 import {AppComponent} from "../app.component";
-import {AdminComponent} from "../components/admin/admin.component";
-import {ManagerComponent} from "../components/manager/manager.component";
 import {AccessDeniedComponent} from "../components/access-denied/access-denied.component";
+import {AuthorComponent} from "../components/author/author.component";
+import {RouterLink} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
 
 const SECURITYMODULES = [
   KeycloakAngularModule,
-  AdminComponent,
-  ManagerComponent,
   AccessDeniedComponent
+]
+
+const COMPONENTS = [
+  AuthorComponent,
+  RouterLink,
+]
+
+const SERVICEMODULES = [
+  HttpClientModule
 ]
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    SECURITYMODULES
+    SECURITYMODULES,
+    COMPONENTS,
+    SERVICEMODULES
   ],
   providers:[
     {
@@ -30,7 +40,9 @@ const SECURITYMODULES = [
   ],
   exports:[
     CommonModule,
-    SECURITYMODULES
+    SECURITYMODULES,
+    COMPONENTS,
+    SERVICEMODULES
   ]
 })
 export class SharedModule { }

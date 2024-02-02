@@ -2,8 +2,8 @@ export const environment = {
   production: false,
   serverUrl: "/api",
   keycloak: {
-    issuer: 'http://localhost:8085/auth/',
+    issuer: 'http://localhost:8085',
     realm: 'springboot-lab',
-    clientId: 'springboot-angular-lab-frontend'
+    clientId: 'demo-angular'
   }
 };

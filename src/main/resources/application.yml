@@ -8,42 +8,29 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-#  security:
-#    oauth2:
-#      client:
-#        provider:
-#          keycloak:
-#            issuer-uri: http://localhost:8085/realms/springboot-lab
-#            user-name-attribute: preferred_username
-#        registration:
-#          keycloak:
-#            client-id: springboot-lab
-#            authorization-grant-type: authorization_code
-#            scope: openid
-#      resourceserver:
-#        jwt:
-#          issuer-uri: http://localhost:8085/realms/springboot-lab
 keycloak:
   # configs do realm
   realm: springboot-lab
-  auth-server-url: http://localhost:8085/auth
+  auth-server-url: http://localhost:8085
   ssl-required: external
   #configs do client
-
-  resource: springboot-angular-lab-backend
+  resource: demo-springboot
   bearer-only: true
   #configs da secret do realm
   credentials:
-    secret: e2a172f5-222b-49b6-bbef-1ef0901143f9
+    secret: q5nsp3CW4BrHcPH16XdnvHYw3R1QouWw
   use-resource-role-mappings: true
   principal-attribute: preferred_username
   security-constraints[0]:
     authRoles[0]: ROLE_ADMIN
-  securityCollections[0]:
-    patterns: /admin
+    security-collections[0]:
+      patterns: /author
   security-constraints[1]:
     authRoles[0]: ROLE_MANAGER
-  securityCollections[1]:
-    patterns: /manager
+    security-collections[0]:
+      patterns: /book
+  config:
+    base-url: http://localhost:4200/
+    valid-redirect-url: http://localhost:4200/*
 
 
