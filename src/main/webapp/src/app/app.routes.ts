@@ -8,18 +8,18 @@ export const routes: Routes = [
   {
     path: 'access-denied',
     component: AccessDeniedComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: 'author',
     component: AuthorComponent,
-    canActivate:[AuthGuard],
-    data: {roles: ['ROLE_ADMIN']}
+    // canActivate:[AuthGuard],
+    // data: {roles: ['ROLE_ADMIN']}
   },
   {
     path: 'book',
     component: BookComponent,
     canActivate: [AuthGuard],
-    data: {roles: ['ROLE_MANAGER']}
+    // data: {roles: ['ROLE_MANAGER']}
   }
 ];
