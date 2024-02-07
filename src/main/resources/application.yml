@@ -8,29 +8,36 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-keycloak:
-  # configs do realm
-  realm: springboot-lab
-  auth-server-url: http://localhost:8085
-  ssl-required: external
-  #configs do client
-  resource: demo-springboot
-  bearer-only: true
-  #configs da secret do realm
-  credentials:
-    secret: q5nsp3CW4BrHcPH16XdnvHYw3R1QouWw
-  use-resource-role-mappings: true
-  principal-attribute: preferred_username
-  security-constraints[0]:
-    authRoles[0]: ROLE_ADMIN
-    security-collections[0]:
-      patterns: /author
-  security-constraints[1]:
-    authRoles[0]: ROLE_MANAGER
-    security-collections[0]:
-      patterns: /book
-  config:
-    base-url: http://localhost:4200/
-    valid-redirect-url: http://localhost:4200/*
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          jwk-set-uri: http://localhost:8085/realms/springboot-lab/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8085/realms/springboot-lab
+#keycloak:
+#  # configs do realm
+#  realm: springboot-lab
+#  auth-server-url: http://localhost:8085
+#  ssl-required: external
+#  #configs do client
+#  resource: demo-springboot
+#  bearer-only: true
+#  #configs da secret do realm
+#  credentials:
+#    secret: q5nsp3CW4BrHcPH16XdnvHYw3R1QouWw
+#  use-resource-role-mappings: true
+#  principal-attribute: preferred_username
+#  security-constraints[0]:
+#    authRoles[0]: ROLE_ADMIN
+#    security-collections[0]:
+#      patterns: /author
+#  security-constraints[1]:
+#    authRoles[0]: ROLE_MANAGER
+#    security-collections[0]:
+#      patterns: /book
+#  config:
+#    base-url: http://localhost:4200/
+#    valid-redirect-url: http://localhost:4200/*
+
 
 

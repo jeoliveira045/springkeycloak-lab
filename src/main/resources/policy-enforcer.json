@@ -1,0 +1,8 @@
+{
+  "realm": "springboot-lab",
+  "auth-server-url": "http://localhost:8085",
+  "resource": "demo-springboot",
+  "credentials": {
+    "secret": "H7eY0dwMbLS65kZ79oF3AvLV91D7VYst"
+  }
+}

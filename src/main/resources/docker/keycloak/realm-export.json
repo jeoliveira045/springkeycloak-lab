@@ -312,7 +312,7 @@
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
-      "secret": "**********",
+      "secret": "H7eY0dwMbLS65kZ79oF3AvLV91D7VYst",
       "redirectUris": [
         "http://localhost:8080/*"
       ],
@@ -320,7 +320,7 @@
         "http://localhost:8080"
       ],
       "notBefore": 0,
-      "bearerOnly": true,
+      "bearerOnly": false,
       "consentRequired": false,
       "standardFlowEnabled": true,
       "implicitFlowEnabled": false,
