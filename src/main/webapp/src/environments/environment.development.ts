@@ -5,5 +5,6 @@ export const environment = {
     url: 'http://localhost:8085',
     realm: 'springboot-lab',
     clientId: 'demo-angular',
+    // resourceId: 'demo-springboot'
   }
 };
