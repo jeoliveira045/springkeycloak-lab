@@ -8,6 +8,7 @@ import {environment} from "../environments/environment.development";
 import {provideClientHydration} from "@angular/platform-browser";
 import {provideAnimations} from "@angular/platform-browser/animations";
 import {DOCUMENT} from "@angular/common";
+import KeycloakAuthorization from "keycloak-js/dist/keycloak-authz";
 
 function initializeKeycloak(keycloak: KeycloakService){
   return () => {

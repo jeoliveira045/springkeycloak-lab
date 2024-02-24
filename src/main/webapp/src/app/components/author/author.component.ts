@@ -20,15 +20,16 @@ export class AuthorComponent implements OnInit {
 
   authorList: Array<Author> = new Array<Author>()
 
-  constructor(protected keycloak: KeycloakService,protected http: HttpClient) {
+  constructor(protected http: HttpClient) {
   }
 
   auth: string = ""
 
   ngOnInit() {
-    this.http.get(`${environment.serverUrl}/author`)
-      .subscribe((books:any) => {
-        for(let i of books){
+    this.http.get(`${environment.serverUrl}/api/author`)
+      .subscribe((authors:any) => {
+        console.log(authors)
+        for(let i of authors){
           this.authorList.push(i)
         }
       })

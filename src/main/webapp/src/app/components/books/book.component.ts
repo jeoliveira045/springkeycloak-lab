@@ -23,7 +23,7 @@ export class BookComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get(`${environment.serverUrl}/book`)
+    this.http.get(`${environment.serverUrl}/api/book`)
       .subscribe((books:any) => {
         for(let i of books){
           this.bookList.push(i)
